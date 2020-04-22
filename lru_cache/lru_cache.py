@@ -45,7 +45,7 @@ class LRUCache:
     def set(self, key, value):
         if key in self.cache_storage: # item1
             node = self.cache_storage[key]
-            node.value = (key, value)
+            node.value = (key, value) 
             self.ordered_list.move_to_front(node)
             return
 
