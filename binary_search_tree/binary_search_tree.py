@@ -86,10 +86,10 @@ class BinarySearchTree:
         while queue.len() > 0:
             dequeued_node = queue.dequeue() 
             print(dequeued_node.value)
-            if node.left:
-                queue.enqueue(node.left)
-            if node.right:
-                queue.enqueue(node.right)
+            if dequeued_node.left:
+                queue.enqueue(dequeued_node.left)
+            if dequeued_node.right:
+                queue.enqueue(dequeued_node.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
@@ -103,10 +103,10 @@ class BinarySearchTree:
         while stack.len() > 0:
             poped_node = stack.pop()
             print(poped_node.value)
-            if node.left:
-                stack.push(node.left)
-            if node.right:
-                stack.push(node.right)
+            if poped_node.left:
+                stack.push(poped_node.left)
+            if poped_node.right:
+                stack.push(poped_node.right)
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
