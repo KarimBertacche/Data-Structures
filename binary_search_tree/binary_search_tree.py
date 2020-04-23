@@ -66,25 +66,67 @@ class BinarySearchTree:
     # Print all the values in order from low to high
     # Hint:  Use a recursive, depth first traversal
     def in_order_print(self, node):
-        pass
+        if node.left:
+            self.in_order_print(node.left)
+
+        print(node.value)
+
+        if node.right:
+            self.in_order_print(node.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
-        pass
+        if node is None:
+            return 
+
+        queue = Queue()
+        queue.enqueue(node)
+
+        while len(queue) is not 0:
+            dequeued_node = queue.dequeue() 
+            print(dequeued_node.value)
+            if node.left:
+                queue.enqueue(node.left)
+            if node.right:
+                queue.enqueue(node.right)
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
-        pass
+        if node is None:
+            return 
+
+        stack = Stack()
+        stack.push(node)
+
+        while len(stack) is not 0:
+            poped_node = stack.pop()
+            print(poped_node.value)
+            if node.left:
+                stack.push(node.left)
+            if node.right:
+                stack.push(node.right)
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
 
     # Print Pre-order recursive DFT
     def pre_order_dft(self, node):
-        pass
+        print(node.value)
+
+        if node.left is not None:
+            self.in_order_print(node.left)
+
+        if node.right is not None:
+            self.in_order_print(node.right)
 
     # Print Post-order recursive DFT
-    def post_order_dft(self, node):
-        pass
+    def post_order_dft(self, node):    
+        if node.left is not None:
+            self.in_order_print(node.left)
+
+        if node.right is not None:
+            self.in_order_print(node.right)
+
+        print(node.value)
