@@ -83,7 +83,7 @@ class BinarySearchTree:
         queue = Queue()
         queue.enqueue(node)
 
-        while len(queue) is not 0:
+        while queue.len() > 0:
             dequeued_node = queue.dequeue() 
             print(dequeued_node.value)
             if node.left:
@@ -100,7 +100,7 @@ class BinarySearchTree:
         stack = Stack()
         stack.push(node)
 
-        while len(stack) is not 0:
+        while stack.len() > 0:
             poped_node = stack.pop()
             print(poped_node.value)
             if node.left:
